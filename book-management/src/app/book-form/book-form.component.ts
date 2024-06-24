@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Book } from '../book.model';
-import { BookService } from '../book.service';
+import { Book } from '../models/book.model';
+import { BookService } from '../services/book.service';
 
 @Component({
   selector: 'app-book-form',
