@@ -12,10 +12,10 @@ import { BookComponent } from './book/book.component';
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.scss',
 })
-export class BookListComponent implements OnInit{
+export class BookListComponent implements OnInit {
   books: Book[] = [];
 
-  constructor(private bookService: BookService) {}
+  constructor(private readonly bookService: BookService) {}
 
   ngOnInit(): void {
     this.loadBooks();

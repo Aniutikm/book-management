@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from '../models/book.model';
@@ -12,15 +12,15 @@ import { BookService } from '../services/book.service';
   templateUrl: './book-form.component.html',
   styleUrl: './book-form.component.scss',
 })
-export class BookFormComponent {
+export class BookFormComponent implements OnInit {
   bookForm: FormGroup;
   bookId: number | null = null;
 
   constructor(
-    private fb: FormBuilder,
-    private bookService: BookService,
-    private route: ActivatedRoute,
-    private router: Router
+    private readonly fb: FormBuilder,
+    private readonly bookService: BookService,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router
   ) {
     this.bookForm = this.fb.group({
       title: ['', Validators.required],

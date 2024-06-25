@@ -7,10 +7,10 @@ import { Book } from '../models/book.model';
   providedIn: 'root'
 })
 export class BookService {
-  private restApiUrl = 'http://localhost:5000/api/books'; // Placeholder REST API URL
-  private graphqlApiUrl = 'http://localhost:5000/graphql'; // Placeholder GraphQL API URL
+  private readonly restApiUrl = 'http://localhost:5000/api/books'; // Placeholder REST API URL
+  private readonly graphqlApiUrl = 'http://localhost:5000/graphql'; // Placeholder GraphQL API URL
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   getBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(this.restApiUrl);

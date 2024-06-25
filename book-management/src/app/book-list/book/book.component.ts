@@ -17,5 +17,4 @@ export class BookComponent {
     this.delete.emit(this.book.id);
   }
 
-  constructor() { }
 }
