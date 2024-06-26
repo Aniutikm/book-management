@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from '../models/book.model';
-import { BookService } from '../services/book.service';
+import { BookServiceResolverService } from '../services/book-service-resolver.service';
 
+ChangeDetectionStrategy.OnPush;
 @Component({
   selector: 'app-book-form',
   standalone: true,
@@ -14,11 +16,11 @@ import { BookService } from '../services/book.service';
 })
 export class BookFormComponent implements OnInit {
   bookForm: FormGroup;
-  bookId: number | null = null;
+  bookId: string | null = null;
 
   constructor(
     private readonly fb: FormBuilder,
-    private readonly bookService: BookService,
+    private readonly bookServiceResolverService: BookServiceResolverService,
     private readonly route: ActivatedRoute,
     private readonly router: Router
   ) {
@@ -33,7 +35,7 @@ export class BookFormComponent implements OnInit {
   ngOnInit(): void {
     this.bookId = this.route.snapshot.params['id'];
     if (this.bookId) {
-      this.bookService.getBook(this.bookId).subscribe((book: Book) => {
+      this.bookServiceResolverService.getBookService().getBook(this.bookId).subscribe((book: Book) => {
         this.bookForm.patchValue(book);
       });
     }
@@ -44,11 +46,11 @@ export class BookFormComponent implements OnInit {
       const book: Book = this.bookForm.value;
       if (this.bookId) {
         book.id = this.bookId;
-        this.bookService.updateBook(book).subscribe(() => {
+        this.bookServiceResolverService.getBookService().updateBook(book).subscribe(() => {
           this.router.navigate(['/']);
         });
       } else {
-        this.bookService.addBook(book).subscribe(() => {
+        this.bookServiceResolverService.getBookService().addBook(book).subscribe(() => {
           this.router.navigate(['/']);
         });
       }

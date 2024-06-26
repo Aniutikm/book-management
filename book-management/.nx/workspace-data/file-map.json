@@ -51,7 +51,7 @@
       },
       {
         "file": ".eslintrc.json",
-        "hash": "13109198439359338216"
+        "hash": "9550712569177903418"
       },
       {
         "file": ".gitignore",
@@ -115,7 +115,7 @@
       },
       {
         "file": "src/app/app.config.ts",
-        "hash": "5028808807012428138"
+        "hash": "18173058558654675529"
       },
       {
         "file": "src/app/app.routes.ts",
@@ -135,7 +135,7 @@
       },
       {
         "file": "src/app/book-form/book-form.component.ts",
-        "hash": "10676405224649047261"
+        "hash": "1307804777875055905"
       },
       {
         "file": "src/app/book-list/book-list.component.html",
@@ -151,7 +151,7 @@
       },
       {
         "file": "src/app/book-list/book-list.component.ts",
-        "hash": "16046373973686300022"
+        "hash": "9193980270990587416"
       },
       {
         "file": "src/app/book-list/book/book.component.html",
@@ -179,7 +179,7 @@
       },
       {
         "file": "src/app/services/book.service.ts",
-        "hash": "15836156197404689868"
+        "hash": "7104938624779548760"
       },
       {
         "file": "src/index.html",

@@ -1,6 +1,9 @@
+import { ChangeDetectionStrategy } from '@angular/compiler';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Book } from '../../models/book.model';
+
+ChangeDetectionStrategy.OnPush;
 
 @Component({
   selector: 'app-book',
@@ -11,7 +14,7 @@ import { Book } from '../../models/book.model';
 })
 export class BookComponent {
   @Input() book!: Book;
-  @Output() delete = new EventEmitter<number>();
+  @Output() delete = new EventEmitter<string>();
 
   onDelete(): void {
     this.delete.emit(this.book.id);

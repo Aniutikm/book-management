@@ -1,5 +1,6 @@
 <div class="book-list">
   <h2>Book List</h2>
+  <button (click)="toggleApi()">Switch to {{ isGraphQl ? 'REST API' : 'GraphQL' }}</button>
   <button routerLink="/add">Add Book</button>
   <ul>
     <li *ngFor="let book of books">

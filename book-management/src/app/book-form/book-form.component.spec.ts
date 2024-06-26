@@ -13,7 +13,7 @@ describe('BookFormComponent', () => {
   let fixture: ComponentFixture<BookFormComponent>;
   let bookService: BookService;
 
-  const mockBook: Book = { id: 1, title: 'Book 1', author: 'Author 1', publishedDate: '2020-01-01', isbn: '1234567890' };
+  const mockBook: Book = { id: "1", title: 'Book 1', author: 'Author 1', publishedDate: '2020-01-01', isbn: '1234567890' };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -64,10 +64,10 @@ describe('BookFormComponent', () => {
       publishedDate: '2022-01-01',
       isbn: '1122334455'
     });
-    component.bookId = 1;
+    component.bookId = '1';
     component.onSubmit();
     expect(bookService.updateBook).toHaveBeenCalledWith({
-      id: 1,
+      id: "1",
       title: 'Updated Book',
       author: 'Updated Author',
       publishedDate: '2022-01-01',
