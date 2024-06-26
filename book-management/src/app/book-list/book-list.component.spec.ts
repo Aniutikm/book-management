@@ -15,8 +15,8 @@ describe('BookListComponent', () => {
   let bookService: BookService;
 
   const mockBooks: Book[] = [
-    { id: 1, title: 'Book 1', author: 'Author 1', publishedDate: '2020-01-01', isbn: '1234567890' },
-    { id: 2, title: 'Book 2', author: 'Author 2', publishedDate: '2021-01-01', isbn: '0987654321' }
+    { id: '1', title: 'Book 1', author: 'Author 1', publishedDate: '2020-01-01', isbn: '1234567890' },
+    { id: '2', title: 'Book 2', author: 'Author 2', publishedDate: '2021-01-01', isbn: '0987654321' }
   ];
 
   beforeEach(async () => {
@@ -49,8 +49,8 @@ describe('BookListComponent', () => {
   });
 
   it('should call deleteBook method when delete event is emitted', () => {
-    component.deleteBook(1);
-    expect(bookService.deleteBook).toHaveBeenCalledWith(1);
+    component.deleteBook('1');
+    expect(bookService.deleteBook).toHaveBeenCalledWith('1');
   });
 });
 

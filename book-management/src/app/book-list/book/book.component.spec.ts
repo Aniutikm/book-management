@@ -11,7 +11,7 @@ describe('BookComponent', () => {
   let debugElement: DebugElement;
 
   const mockBook: Book = {
-    id: 1,
+    id: '1',
     title: 'Book 1',
     author: 'Author 1',
     publishedDate: '2020-01-01',
@@ -49,7 +49,7 @@ describe('BookComponent', () => {
     jest.spyOn(component.delete, 'emit');
     const button = debugElement.queryAll(By.css('button'))[1].nativeElement;
     button.click();
-    expect(component.delete.emit).toHaveBeenCalledWith(1);
+    expect(component.delete.emit).toHaveBeenCalledWith('1');
   });
  
 });
